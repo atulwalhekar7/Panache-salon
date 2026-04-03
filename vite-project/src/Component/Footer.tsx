@@ -1,4 +1,4 @@
-import React from "react";
+/* No React import needed */
 
 const Footer = () => {
   const year = new Date().getFullYear();

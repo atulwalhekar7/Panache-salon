@@ -1,4 +1,4 @@
-import React from "react";
+/* No React import needed for functional component without hooks */
 
 export default function FloatingSocialIcons() {
   return (

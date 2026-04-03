@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CourseSection() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = sectionRef.current;
+    const el = sectionRef.current!;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,7 +15,7 @@ export default function CourseSection() {
       { threshold: 0.2 }
     );
 
-    observer.observe(el);
+    observer.observe(el!);
   }, []);
 
   return (
