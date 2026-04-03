@@ -1,4 +1,4 @@
-import React from "react";
+/* No React import needed */
 import PanacheNavbar from "./Component/Navbar";
 import Banner from "./Component/Banner";
 import AboutPage from "./Component/About";
