@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     id: 1,
-    tag: "Signature Hair Care",
+    // tag: "Signature Hair Care",
     title: "Artistry in Every Strand",
     sub: "Expert styling and restorative treatments tailored to your unique beauty.",
     accent: "#B8860B",
@@ -12,7 +12,7 @@ const slides = [
   },
   {
     id: 2,
-    tag: "Advanced Skin Rituals",
+    // tag: "Advanced Skin Rituals",
     title: "The Science of Glow",
     sub: "Bespoke facials designed to restore your natural vitality and radiance.",
     accent: "#A67C00",
