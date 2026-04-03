@@ -1,198 +1,232 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="panache-footer">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Outfit:wght@300;400;500&display=swap');
+    <footer className="footer">
 
-        .panache-footer {
-          background-color: #111111; /* Deep charcoal */
-          color: #FFFFFF;
-          font-family: 'Outfit', sans-serif;
-          padding: 80px 8% 40px;
-          border-top: 1px solid rgba(184, 134, 11, 0.2);
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
+        .footer {
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+          background: #0f0f0f;
+          color: #fff;
+          font-family: 'Inter', sans-serif;
+          padding: 100px 8% 40px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* soft glow background */
+        .footer::before {
+          content: "";
+          position: absolute;
+          top: -200px;
+          right: -200px;
+          width: 400px;
+          height: 400px;
+          background: rgba(212, 175, 55, 0.08);
+          border-radius: 50%;
+          filter: blur(80px);
         }
 
         .footer-grid {
           display: grid;
-          grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+          grid-template-columns: 2fr 1fr 1fr 1.5fr;
           gap: 60px;
-          margin-bottom: 60px;
+          position: relative;
+          z-index: 2;
         }
 
-        /* Brand Column */
-        .footer-brand h2 {
-          font-family: 'Bodoni Moda', serif;
-          font-size: 2.2rem;
-          letter-spacing: 0.1em;
-          margin-bottom: 1.5rem;
-          color: #B8860B; /* Gold */
-          text-transform: uppercase;
+        /* BRAND */
+        .brand h2 {
+          font-family: 'Playfair Display', serif;
+          font-size: 2.5rem;
+          margin-bottom: 15px;
+          color: #d4af37;
         }
 
-        .footer-brand p {
-          color: rgba(255, 255, 255, 0.6);
+        .brand p {
+          color: rgba(255,255,255,0.6);
           line-height: 1.8;
-          font-size: 0.95rem;
-          max-width: 300px;
+          max-width: 350px;
         }
 
-        /* Link Columns */
-        .footer-col h4 {
+        /* HEADINGS */
+        .col h4 {
           font-size: 0.8rem;
-          text-transform: uppercase;
           letter-spacing: 0.25em;
-          margin-bottom: 2rem;
-          color: #FFFFFF;
-          font-weight: 600;
+          text-transform: uppercase;
+          margin-bottom: 25px;
+          color: #fff;
         }
 
-        .footer-links {
+        /* LINKS */
+        .links {
           list-style: none;
           padding: 0;
-          margin: 0;
         }
 
-        .footer-links li {
-          margin-bottom: 1rem;
+        .links li {
+          margin-bottom: 14px;
         }
 
-        .footer-links a {
-          color: rgba(255, 255, 255, 0.5);
+        .links a {
+          color: rgba(255,255,255,0.6);
           text-decoration: none;
-          font-size: 0.9rem;
           transition: 0.3s;
-          display: inline-block;
+          font-size: 0.95rem;
         }
 
-        .footer-links a:hover {
-          color: #B8860B;
+        .links a:hover {
+          color: #d4af37;
           transform: translateX(5px);
         }
 
-        /* Newsletter Column */
-        .newsletter-box p {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.5);
-          margin-bottom: 1.5rem;
-        }
-
-        .newsletter-form {
-          display: flex;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          padding-bottom: 10px;
-          transition: 0.3s;
-        }
-
-        .newsletter-form:focus-within {
-          border-bottom-color: #B8860B;
-        }
-
-        .newsletter-form input {
-          background: none;
-          border: none;
-          color: #fff;
-          padding: 5px 0;
-          width: 100%;
-          outline: none;
+        /* NEWSLETTER */
+        .newsletter p {
+          color: rgba(255,255,255,0.6);
           font-size: 0.9rem;
+          margin-bottom: 20px;
         }
 
-        .newsletter-form button {
+        .form {
+          display: flex;
+          border-bottom: 1px solid rgba(255,255,255,0.2);
+          padding-bottom: 8px;
+        }
+
+        .form input {
+          flex: 1;
+          background: transparent;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 8px 0;
+        }
+
+        .form button {
           background: none;
           border: none;
-          color: #B8860B;
-          text-transform: uppercase;
-          font-size: 0.7rem;
-          font-weight: 600;
-          letter-spacing: 0.1em;
+          color: #d4af37;
           cursor: pointer;
+          letter-spacing: 0.1em;
         }
 
-        /* Bottom Bar */
-        .footer-bottom {
-          padding-top: 40px;
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
+        /* BOTTOM */
+        .bottom {
+          margin-top: 70px;
+          padding-top: 25px;
+          border-top: 1px solid rgba(255,255,255,0.08);
           display: flex;
           justify-content: space-between;
           align-items: center;
-          font-size: 0.75rem;
-          color: rgba(255, 255, 255, 0.3);
-          letter-spacing: 0.05em;
+          font-size: 0.8rem;
+          color: rgba(255,255,255,0.4);
         }
 
-        .social-links {
+        .socials {
           display: flex;
-          gap: 2rem;
+          gap: 25px;
         }
 
-        .social-links a {
-          color: rgba(255, 255, 255, 0.4);
+        .socials a {
+          color: rgba(255,255,255,0.5);
           text-decoration: none;
           transition: 0.3s;
         }
 
-        .social-links a:hover {
-          color: #B8860B;
+        .socials a:hover {
+          color: #d4af37;
         }
 
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
-          .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+          .footer-grid {
+            grid-template-columns: 1fr 1fr;
+          }
         }
 
-        @media (max-width: 600px) {
-          .footer-grid { grid-template-columns: 1fr; }
-          .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        @media (max-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+
+          .brand p {
+            margin: auto;
+          }
+
+          .bottom {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+          }
         }
       `}</style>
 
+      {/* GRID */}
       <div className="footer-grid">
-        <div className="footer-brand">
+
+        {/* BRAND */}
+        <div className="brand">
           <h2>The Panachè</h2>
-          <p>Elevating the art of hair and skin care through precision, passion, and the pursuit of perfection since 2015.</p>
+          <p>
+           Shop no 7,Sonigara Kesar,
+           Kaspate Vasti,Kalewadi Phata,
+           Wakad,Pune,Maharashtra 411057
+          </p>
         </div>
 
-        <div className="footer-col">
+        {/* NAV */}
+        <div className="col">
           <h4>Navigation</h4>
-          <ul className="footer-links">
+          <ul className="links">
             <li><a href="/">Home</a></li>
-            <li><a href="/about">Our Story</a></li>
+            <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
-            <li><a href="/academy">Academy</a></li>
+            <li><a href="/academy">Course</a></li>
           </ul>
         </div>
 
-        <div className="footer-col">
-          <h4>Contact</h4>
-          <ul className="footer-links">
-            <li><a href="#">Booking Inquiry</a></li>
-            <li><a href="#">Support Center</a></li>
-            <li><a href="#">Academy Enrollment</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+        {/* CONTACT */}
+        <div className="col">
+          <h4>Support</h4>
+          <ul className="links">
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">Enquiry</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy</a></li>
           </ul>
         </div>
 
-        <div className="newsletter-box footer-col">
+        {/* NEWSLETTER */}
+        <div className="newsletter col">
           <h4>Newsletter</h4>
-          <p>Join our inner circle for seasonal rituals and exclusive academy insights.</p>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Your Email Address" />
-            <button type="submit">Join</button>
+          <p>Join for exclusive updates & academy insights.</p>
+
+          <form className="form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Enter email" />
+            <button>Join</button>
           </form>
         </div>
+
       </div>
 
-      <div className="footer-bottom">
-        <p>&copy; {currentYear} THE PANACHÈ BEAUTY SALON & ACADEMY. ALL RIGHTS RESERVED.</p>
-        <div className="social-links">
-          <a href="#">INSTAGRAM</a>
-          <a href="#">FACEBOOK</a>
-          <a href="#">PINTEREST</a>
+      {/* BOTTOM BAR */}
+      <div className="bottom">
+        <p>© {year} The Panachè. All rights reserved.</p>
+
+        <div className="socials">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Pinterest</a>
         </div>
       </div>
+
     </footer>
   );
 };

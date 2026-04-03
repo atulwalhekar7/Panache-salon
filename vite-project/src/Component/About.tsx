@@ -6,7 +6,6 @@ const AboutPage = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
 
-        /* Reset global spacing */
         body, html {
           margin: 0;
           padding: 0;
@@ -19,47 +18,59 @@ const AboutPage = () => {
           font-family: 'Inter', sans-serif;
           line-height: 1.6;
           padding-bottom: 100px;
-          /* Ensure the container itself doesn't limit width */
           width: 100%;
         }
 
-        /* --- Full Width Hero Section --- */
+        /* --- HERO SECTION --- */
         .about-hero {
-          height: 70vh;
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
           position: relative;
           background: #f0ede8;
-          /* Breakout to force edge-to-edge */
           width: 100vw;
           margin-left: calc(-50vw + 50%);
           overflow: hidden;
+          padding: 60px 8%;        /* padding controls height now, not fixed vh */
         }
 
-        .hero-subtitle {
-          font-size: 0.9rem;
+        .section-header {
+          animation: fadeIn 1s ease forwards;
+          opacity: 0;
+        }
+
+        .section-tag {
+          color: #D4AF37;
+          letter-spacing: 0.2em;
+          font-size: 0.8rem;
           text-transform: uppercase;
-          letter-spacing: 0.5em;
-          color: #B8860B;
-          margin-bottom: 1.5rem;
-          display: block;
+          margin-bottom: 1rem;
+          display: inline-block;
         }
 
-        .about-hero h1 {
-          font-family: 'Bodoni Moda', serif;
-          font-size: clamp(3.5rem, 8vw, 7rem);
-          font-weight: 400;
-          margin: 0;
-          color: #1a1a1a;
-          line-height: 1;
+        .section-title {
+          font-size: 2.8rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          font-family: 'Playfair Display', serif;
+        }
+
+        .section-sub {
+          font-size: 1.1rem;
+          color: #555;
+          margin-bottom: 0;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- Narrative Section --- */
         .section-padding {
           padding: 120px 8%;
-          max-width: 1400px; /* Keeps text readable on giant screens */
+          max-width: 1400px;
           margin: 0 auto;
         }
 
@@ -105,7 +116,6 @@ const AboutPage = () => {
           color: #fff;
           text-align: center;
           padding: 120px 15%;
-          /* Breakout to force edge-to-edge */
           width: 100vw;
           margin-left: calc(-50vw + 50%);
           box-sizing: border-box;
@@ -113,7 +123,6 @@ const AboutPage = () => {
 
         .philosophy-section h3 {
           font-family: 'Bodoni Moda', serif;
-          font-style: italic;
           font-size: clamp(1.8rem, 3vw, 2.8rem);
           margin-bottom: 4rem;
           font-weight: 400;
@@ -144,47 +153,52 @@ const AboutPage = () => {
           .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
           .accent-img { display: none; }
           .section-padding { padding: 60px 5%; }
+          .section-title { font-size: 2.2rem; }
+          .about-hero { padding: 48px 6%; }
         }
       `}</style>
 
-      {/* Hero Header - Now Edge-to-Edge */}
+      {/* Hero Header */}
       <section className="about-hero">
-        <div className="hero-title-wrapper">
-          <span className="hero-subtitle">Est. 2015 — Pune</span>
-          <h1>The Heritage of <br/> Panachè</h1>
+        <div className="section-header">
+          <div className="section-tag">About Us</div>
+          <h2 className="section-title">The Heritage of Panachè</h2>
+          <p className="section-sub">
+            Founded on the belief that beauty is an intimate expression of self, we create experiences that last a lifetime.
+          </p>
         </div>
       </section>
 
-      {/* Narrative Section - Centered Content */}
+      {/* Narrative Section */}
       <section className="section-padding narrative-grid">
         <div className="image-box">
-          <img 
-            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop" 
-            className="main-img" 
-            alt="Salon Interior" 
+          <img
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop"
+            className="main-img"
+            alt="Salon Interior"
           />
-          <img 
-            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=600&auto=format&fit=crop" 
-            className="accent-img" 
-            alt="Service Close-up" 
+          <img
+            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=600&auto=format&fit=crop"
+            className="accent-img"
+            alt="Service Close-up"
           />
         </div>
         <div className="text-content">
           <h2>Our Philosophy of Personal Expression</h2>
           <p>
-            Founded on the belief that beauty is an intimate expression of self, 
-            <strong> The Panachè</strong> has spent over a decade redefining 
+            Founded on the belief that beauty is an intimate expression of self,
+            <strong> The Panachè</strong> has spent over a decade redefining
             luxury hair and skin care in Pune.
           </p>
           <p>
-            We don’t just offer services; we curate experiences. Our academy 
-            trains the next generation of masters, ensuring that the art of 
+            We don't just offer services; we curate experiences. Our academy
+            trains the next generation of masters, ensuring that the art of
             panache is preserved, perfected, and shared.
           </p>
         </div>
       </section>
 
-      {/* Philosophy Section - Now Edge-to-Edge Dark Block */}
+      {/* Philosophy Section */}
       <section className="philosophy-section">
         <h3>"Luxury is not a privilege, it is a standard of care."</h3>
         <div className="philosophy-grid">
