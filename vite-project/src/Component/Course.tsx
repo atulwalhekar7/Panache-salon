@@ -23,8 +23,8 @@ export default function CourseSection() {
       <style>{`
         .course-section {
           // padding: 100px 8%;
-          background: linear-gradient(135deg, #FAF9F6, #f3efe7);
-          font-family: 'Outfit', sans-serif;
+          background: linear-gradient(135deg, #FAF9F6, #E8C9A3);
+          font-family: 'Inter', sans-serif;
           opacity: 0;
           transform: translateY(60px);
           transition: all 1s ease;
@@ -42,7 +42,7 @@ export default function CourseSection() {
         }
 
         .section-tag {
-          color: #D4AF37;
+          color: #E39A9E;
           letter-spacing: 0.3em;
           font-size: 0.90rem;
           text-transform: uppercase;
@@ -107,7 +107,7 @@ export default function CourseSection() {
         }
 
         .course-tag {
-          color: #D4AF37;
+          color: #E39A9E;
           letter-spacing: 0.2em;
           font-size: 0.8rem;
           text-transform: uppercase;
@@ -151,7 +151,7 @@ export default function CourseSection() {
 
         .course-highlights li::before {
           content: "✔";
-          color: #D4AF37;
+          color: #E39A9E;
           font-weight: bold;
         }
 

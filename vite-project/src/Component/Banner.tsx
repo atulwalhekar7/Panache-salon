@@ -60,7 +60,7 @@ export default function HighContrastBanner() {
   return (
     <div className="banner-outer">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
 
         html { scroll-behavior: smooth; }
         body, html { margin: 0; padding: 0; overflow-x: hidden; }
@@ -73,7 +73,7 @@ export default function HighContrastBanner() {
           min-height: 600px;
           background: #FAF9F6;
           color: #1a1a1a;
-          font-family: 'Outfit', sans-serif;
+        font-family: 'Inter', sans-serif;
           overflow: hidden;
           display: flex;
         }
@@ -109,14 +109,14 @@ export default function HighContrastBanner() {
 
         .hero-sub {
           font-size: 1.1rem;
-          color: #555;
+          color: #000000;
           max-width: 450px;
           line-height: 1.7;
           margin-bottom: 2.5rem;
         }
 
         .book-btn {
-          background: #1a1a1a;
+          background: #000000;
           color: #fff;
           border: none;
           padding: 1.2rem 3.5rem;
@@ -129,7 +129,7 @@ export default function HighContrastBanner() {
         }
 
         .book-btn:hover {
-          background: var(--accent);
+          background: #E39A9E;
           transform: translateY(-3px);
         }
 

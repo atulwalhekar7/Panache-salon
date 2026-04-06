@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
 
         .footer {
           width: 100vw;
@@ -28,7 +28,7 @@ const Footer = () => {
           right: -200px;
           width: 400px;
           height: 400px;
-          background: rgba(212, 175, 55, 0.08);
+          background: rgba(227, 154, 158, 0.08);
           border-radius: 50%;
           filter: blur(80px);
         }
@@ -46,7 +46,7 @@ const Footer = () => {
           font-family: 'Playfair Display', serif;
           font-size: 2.5rem;
           margin-bottom: 15px;
-          color: #d4af37;
+          color: #E39A9E;
         }
 
         .brand p {
@@ -82,7 +82,7 @@ const Footer = () => {
         }
 
         .links a:hover {
-          color: #d4af37;
+          color: #E39A9E;
           transform: translateX(5px);
         }
 
@@ -111,7 +111,7 @@ const Footer = () => {
         .form button {
           background: none;
           border: none;
-          color: #d4af37;
+          color: #E39A9E;
           cursor: pointer;
           letter-spacing: 0.1em;
         }
@@ -140,7 +140,7 @@ const Footer = () => {
         }
 
         .socials a:hover {
-          color: #d4af37;
+          color: #E39A9E;
         }
 
         /* RESPONSIVE */

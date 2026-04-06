@@ -15,27 +15,27 @@ export default function App() {
       <PanacheNavbar />
 
       {/* HOME - Banner Page */}
-      <section id="home" style={{ height: "100vh" }}>
+      <section id="home" style={{ height: "100vh", scrollMarginTop: "100px" }}>
         <Banner />
       </section>
 
       {/* ABOUT */}
-      <section id="about">
+      <section id="about" style={{ scrollMarginTop: "100px" }}>
         <AboutPage />
       </section>
 
       {/* SERVICES */}
       <section
         id="services"
-        style={{ minHeight: "100vh", scrollMarginTop: "80px" }}
+        style={{ minHeight: "100vh", scrollMarginTop: "100px" }}
       >
         <ServicesPage />
       </section>
 
-      {/* COURSE ✅ NEW SECTION */}
+      {/* COURSE */}
       <section
         id="course"
-        style={{ minHeight: "100vh", scrollMarginTop: "80px" }}
+        style={{ minHeight: "100vh", scrollMarginTop: "100px" }}
       >
         <CoursePage />
       </section>

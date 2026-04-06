@@ -90,7 +90,7 @@ const ServicesPage = () => {
         body { margin: 0; background: #faf9f6; }
 
         .services {
-          font-family: Arial, sans-serif;
+          font-family: 'Inter', sans-serif;
           padding-bottom: 100px;
         }
 
@@ -103,7 +103,7 @@ const ServicesPage = () => {
         .section-header { display: inline-block; }
 
         .section-tag {
-          color: #D4AF37;
+          color: #E39A9E;
           letter-spacing: 0.2em;
           font-size: 0.8rem;
           text-transform: uppercase;
@@ -206,7 +206,7 @@ const ServicesPage = () => {
         }
 
         .price {
-          color: #b8860b;
+          color: #E39A9E;
           font-weight: 600;
           margin-bottom: 10px;
         }
@@ -266,7 +266,7 @@ const ServicesPage = () => {
           transition: background 0.2s;
         }
 
-        .btn-whatsapp:hover { background: #b8860b; }
+        .btn-whatsapp:hover { background: #E39A9E; }
 
         @media (max-width: 1024px) {
           .grid { grid-template-columns: repeat(2, 1fr); }

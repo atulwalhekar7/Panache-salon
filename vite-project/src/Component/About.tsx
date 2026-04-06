@@ -4,7 +4,7 @@ const AboutPage = () => {
   return (
     <div className="about-container">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
 
         body, html {
           margin: 0;
@@ -41,7 +41,7 @@ const AboutPage = () => {
         }
 
         .section-tag {
-          color: #D4AF37;
+          color: #E39A9E;
           letter-spacing: 0.2em;
           font-size: 0.8rem;
           text-transform: uppercase;
@@ -103,7 +103,7 @@ const AboutPage = () => {
         }
 
         .text-content h2 {
-          font-family: 'Bodoni Moda', serif;
+          font-family: 'Playfair Display', serif;
           font-size: clamp(2rem, 4vw, 3.5rem);
           margin-bottom: 2rem;
           font-weight: 400;
@@ -122,7 +122,7 @@ const AboutPage = () => {
         }
 
         .philosophy-section h3 {
-          font-family: 'Bodoni Moda', serif;
+          font-family: 'Playfair Display', serif;
           font-size: clamp(1.8rem, 3vw, 2.8rem);
           margin-bottom: 4rem;
           font-weight: 400;
@@ -139,7 +139,7 @@ const AboutPage = () => {
           text-transform: uppercase;
           letter-spacing: 0.2em;
           margin-bottom: 1.5rem;
-          color: #B8860B;
+          color: #E39A9E;
         }
 
         .phi-item p {

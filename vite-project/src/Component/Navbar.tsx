@@ -31,7 +31,7 @@ export default function PanacheNavbar() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .logo-img {
@@ -41,14 +41,15 @@ export default function PanacheNavbar() {
   display: block;
 }
 
-        :root {
-          --gold: #C9973A;
-          --gold-light: #E8C46A;
-          --gold-dark: #9A6F2A;
-          --gold-shimmer: #F5D87A;
-          --ink: #3A2A10;
+:root {
+--primary: #E39A9E !important;
+          --secondary: #E8C9A3 !important;
+          --accent-gradient: linear-gradient(135deg, #E39A9E 0%, #E8C9A3 100%) !important;
+          --primary-dark: #C87A84;
+          --primary-light: #F2D0D4;
+          --ink: #000000;
           --white: #FFFFFF;
-          --off-white: #FAF7F2;
+          --bg-light: #FAF9F6;
         }
 
         /* ── ANIMATIONS ── */
@@ -66,9 +67,9 @@ export default function PanacheNavbar() {
         }
 
         @keyframes pulse-ring {
-          0%   { box-shadow: 0 2px 14px rgba(201,151,58,.35), 0 0 0 0 rgba(201,151,58,.5); }
-          60%  { box-shadow: 0 2px 14px rgba(201,151,58,.35), 0 0 0 9px rgba(201,151,58,0); }
-          100% { box-shadow: 0 2px 14px rgba(201,151,58,.35), 0 0 0 0 rgba(201,151,58,0); }
+          0%   { box-shadow: 0 2px 14px rgba(227,154,158,.35), 0 0 0 0 rgba(227,154,158,.5); }
+          60%  { box-shadow: 0 2px 14px rgba(227,154,158,.35), 0 0 0 9px rgba(227,154,158,0); }
+          100% { box-shadow: 0 2px 14px rgba(227,154,158,.35), 0 0 0 0 rgba(227,154,158,0); }
         }
 
         @keyframes phone-ring {
@@ -115,28 +116,7 @@ export default function PanacheNavbar() {
           gap: 1.5rem;
         }
 
-        /* ── GOLD ORNAMENT LINE — full width ── */
-        .navbar-ornament {
-          position: absolute;
-          bottom: -1px;
-          left: 0;
-          right: 0;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(
-            90deg,
-            transparent 0%,
-            var(--gold) 25%,
-            var(--gold-shimmer) 50%,
-            var(--gold) 75%,
-            transparent 100%
-          );
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
-        }
 
-        .navbar.scrolled .navbar-ornament { opacity: 1; }
 
         /* ── LOGO ── */
         .logo {
@@ -157,23 +137,23 @@ export default function PanacheNavbar() {
         }
 
         .logo-the {
-          font-family: 'Cormorant Garamond', serif;
+          font-family: 'Playfair Display', serif;
           font-style: italic;
           font-size: 12px;
-          color: var(--gold);
+          color: var(--primary);
           letter-spacing: 0.06em;
         }
 
         .logo-name {
-          font-family: 'Cinzel', serif;
+          font-family: 'Playfair Display', serif;
           font-size: 1.3rem;
           font-weight: 600;
           background: linear-gradient(
             135deg,
-            var(--gold-dark) 0%,
-            var(--gold) 45%,
-            var(--gold-shimmer) 75%,
-            var(--gold) 100%
+            var(--primary-dark) 0%,
+            var(--primary) 45%,
+            var(--secondary) 75%,
+            var(--primary) 100%
           );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -182,10 +162,10 @@ export default function PanacheNavbar() {
         }
 
         .logo-sub {
-          font-family: 'Cinzel', serif;
+          font-family: 'Inter', sans-serif;
           font-size: 8px;
           letter-spacing: 0.22em;
-          color: var(--gold-dark);
+          color: var(--primary-dark);
           text-transform: uppercase;
           margin-top: 2px;
         }
@@ -263,80 +243,67 @@ export default function PanacheNavbar() {
           flex-shrink: 0;
         }
 
-        /* ── CALL BUTTON ── */
+        /* ── CALL BUTTON ── (Services vibe) */
         .call-btn {
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 7px;
-          font-family: 'Cinzel', serif;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: var(--gold-dark);
-          background: transparent;
-          border: 1px solid rgba(201, 151, 58, 0.5);
-          padding: 9px 18px;
+          padding: 11px 16px;
+          border: 1.5px solid #000000;
+          background: white;
+          color: #000000;
+          border-radius: 10px;
           cursor: pointer;
-          border-radius: 2px;
-          transition: background 0.3s, border-color 0.3s, color 0.3s;
+          font-size: 0.88rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-decoration: none;
+          transition: background 0.2s, color 0.2s;
           white-space: nowrap;
         }
 
         .call-btn:hover {
-          background: rgba(201, 151, 58, 0.08);
-          border-color: var(--gold);
-          color: var(--gold);
+          background: #000000;
+          color: white;
         }
 
         .call-icon {
-          width: 14px;
-          height: 14px;
+          width: 15px;
+          height: 15px;
           flex-shrink: 0;
-          display: inline-block;
         }
 
-        /* ── BOOK NOW CTA ── */
+        /* ── BOOK NOW CTA ── (Services vibe) */
         .nav-cta {
-          font-family: 'Cinzel', serif;
-          font-size: 10px;
-          font-weight: 600;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: var(--white);
-          background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
-          border: none;
-          padding: 10px 24px;
-          cursor: pointer;
-          position: relative;
-          overflow: hidden;
-          clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-          box-shadow: 0 2px 14px rgba(201, 151, 58, 0.35);
-          transition: box-shadow 0.3s ease, transform 0.2s ease;
-          white-space: nowrap;
-          display: inline-flex;
+          display: flex;
           align-items: center;
+          justify-content: center;
           gap: 7px;
+          padding: 11px 16px;
+          border: 1.5px solid #000000;
+          background: white;
+          color: #000000;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: 0.88rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          transition: background 0.2s, color 0.2s;
+          white-space: nowrap;
           text-decoration: none;
         }
 
-        .nav-cta::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, var(--gold-shimmer) 0%, var(--gold) 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
         .nav-cta:hover {
-          box-shadow: 0 6px 22px rgba(201, 151, 58, 0.5);
-          transform: translateY(-1px);
+          background: #000000;
+          color: white;
         }
 
-        .nav-cta:hover::before { opacity: 1; }
-        .nav-cta span { position: relative; z-index: 1; }
-        .nav-cta .wa-icon { position: relative; z-index: 1; flex-shrink: 0; }
+        .wa-icon {
+          width: 15px;
+          height: 15px;
+          flex-shrink: 0;
+        }
 
         /* ── HAMBURGER ── */
         .hamburger {
@@ -352,7 +319,7 @@ export default function PanacheNavbar() {
         .hamburger-line {
           width: 24px;
           height: 1.5px;
-          background: var(--gold);
+          background: #000000;
           transition: all 0.3s ease;
           transform-origin: center;
         }
@@ -364,12 +331,19 @@ export default function PanacheNavbar() {
         /* ── MOBILE MENU ── */
         .mobile-menu {
           display: none;
+          position: fixed;
+          top: 86px;
+          left: 0;
+          right: 0;
+          bottom: 0;
           flex-direction: column;
-          background: var(--white);
-          border-top: 1px solid rgba(201, 151, 58, 0.15);
-          padding: 1rem 2rem 1.5rem;
-          gap: 0.2rem;
-          box-shadow: 0 8px 30px rgba(201, 151, 58, 0.1);
+          background: #FFFFFF !important;
+          border-top: 1px solid #00000020;
+          padding: 2rem;
+          gap: 0.5rem;
+          box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+          z-index: 999;
+          overflow-y: auto;
         }
 
         .mobile-menu.open { display: flex; }
@@ -415,40 +389,45 @@ export default function PanacheNavbar() {
           align-items: center;
           justify-content: center;
           gap: 8px;
-          font-family: 'Cinzel', serif;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          color: var(--gold-dark);
-          background: transparent;
-          border: 1px solid rgba(201, 151, 58, 0.5);
-          padding: 0.8rem;
+          padding: 12px;
+          border: 1.5px solid #000000;
+          background: white;
+          color: #000000;
+          border-radius: 10px;
           cursor: pointer;
-          border-radius: 2px;
-          transition: background 0.3s ease;
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          transition: background 0.2s, color 0.2s;
         }
 
-        .mobile-call:hover { background: rgba(201, 151, 58, 0.08); }
+        .mobile-call:hover {
+          background: #000000;
+          color: white;
+        }
 
         .mobile-cta {
-          font-family: 'Cinzel', serif;
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: var(--white);
-          background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-          border: none;
-          padding: 0.85rem;
-          cursor: pointer;
-          width: 100%;
-          box-shadow: 0 4px 18px rgba(201, 151, 58, 0.3);
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 8px;
+          padding: 12px;
+          border: 1.5px solid #000000;
+          background: white;
+          color: #000000;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          transition: background 0.2s, color 0.2s;
+          width: 100%;
           text-decoration: none;
+        }
+
+        .mobile-cta:hover {
+          background: #000000;
+          color: white;
         }
 
         /* ── RESPONSIVE ── */
@@ -478,7 +457,20 @@ export default function PanacheNavbar() {
                   <a
                     href={link.href}
                     className={`nav-link${active === link.label ? " active" : ""}`}
-                    onClick={() => setActive(link.label)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById(link.href.slice(1));
+                      if (element) {
+                        const navbarHeight = 100;
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth"
+                        });
+                      }
+                      setActive(link.label);
+                    }}
                     aria-current={active === link.label ? "page" : undefined}
                   >
                     {link.label}
@@ -542,8 +534,7 @@ export default function PanacheNavbar() {
           </button>
         </div>
 
-        {/* Full-width gold ornament line */}
-        <div className="navbar-ornament" aria-hidden="true" />
+
 
         {/* ── MOBILE MENU ── */}
         <div className={`mobile-menu${isOpen ? " open" : ""}`} role="menu">
@@ -553,7 +544,21 @@ export default function PanacheNavbar() {
               href={link.href}
               className={`mobile-link${active === link.label ? " active" : ""}`}
               role="menuitem"
-              onClick={() => { setActive(link.label); setIsOpen(false); }}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById(link.href.slice(1));
+                if (element) {
+                  const navbarHeight = 100;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                  });
+                }
+                setActive(link.label);
+                setIsOpen(false);
+              }}
             >
               {link.label}
               <span className="mobile-arrow" aria-hidden="true">→</span>
