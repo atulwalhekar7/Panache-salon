@@ -188,8 +188,8 @@ export default function CourseSection() {
 
       {/* HEADER */}
       <div className="section-header">
-        <div className="section-tag">Our Courses</div>
-        <h2 className="section-title">Professional Beauty Courses</h2>
+        {/* <div className="section-tag">Our Courses</div> */}
+        <h2 className="section-title">Our Courses</h2>
         <p className="section-desc">
           Learn industry-leading beauty techniques with expert trainers and
           build a successful career in the salon and wellness industry.

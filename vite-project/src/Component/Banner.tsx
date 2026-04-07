@@ -153,9 +153,21 @@ export default function PanacheBanner() {
             animation-duration: 60s;
           }
         }
-        @keyframes pb-scroll {
+@keyframes pb-scroll {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
+        }
+
+        /* Highlight glow animation for buttons */
+        @keyframes highlight-glow {
+          0%, 100% {
+            box-shadow: 0 4px 16px rgba(232, 201, 163, 0.3);
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            box-shadow: 0 8px 32px rgba(227, 154, 158, 0.6), 0 0 40px rgba(232, 201, 163, 0.4);
+            transform: translateY(-3px) scale(1.02);
+          }
         }
 
         /* ── TAGLINE STRIP (below marquee, fixed) ── */
@@ -300,11 +312,12 @@ export default function PanacheBanner() {
           transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
           box-shadow: none;
         }
-        .pb-cta:hover {
+.pb-cta:hover {
           background: #E8C9A3;
           color: #000000 !important;
           transform: translateY(-2px);
           box-shadow: 0 8px 28px rgba(227,154,158,0.4);
+          animation: highlight-glow 1.5s ease-in-out infinite;
         }
 
         .pb-outline {
@@ -326,11 +339,18 @@ export default function PanacheBanner() {
           gap: 9px;
           transition: border-color 0.3s, background 0.3s, transform 0.25s;
         }
-        .pb-outline:hover {
+.pb-outline:hover {
           border-color: #E39A9E;
           background: rgba(227,154,158,0.12);
           color: #ffffff !important;
           transform: translateY(-2px);
+          animation: highlight-glow 1.5s ease-in-out infinite;
+        }
+
+        /* Focus states for accessibility */
+        .pb-cta:focus, .pb-outline:focus {
+          outline: none;
+          animation: highlight-glow 1.5s ease-in-out infinite;
         }
 
         @keyframes pb-up {
@@ -490,7 +510,7 @@ export default function PanacheBanner() {
               Explore Services
             </button>
             <a
-              href="https://wa.me/919890794670"
+              href="https://wa.me/919637616697"
               target="_blank"
               rel="noopener noreferrer"
               className="pb-outline"

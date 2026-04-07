@@ -64,7 +64,7 @@ const services = [
   }
 ];
 
-const PHONE = "919890794670";
+const PHONE = "9637616697";
 
 const getWhatsAppLink = (title: string, price: string, desc: string) => {
   const message =
@@ -207,9 +207,42 @@ const ServicesPage = () => {
         }
 
         .price {
-          color: #E39A9E;
-          font-weight: 600;
-          margin-bottom: 10px;
+          background: linear-gradient(135deg, #D98880 0%, #E39A9E 50%, #D98880 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-weight: 700;
+          font-size: 1.3rem;
+          margin-bottom: 12px;
+          letter-spacing: 0.05em;
+          text-shadow: 0 2px 8px rgba(217,136,128,0.4);
+          padding: 8px 16px;
+          border-radius: 8px;
+          display: inline-block;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .price::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(227,154,158,0.2) 0%, rgba(232,201,163,0.4) 50%, rgba(227,154,158,0.2) 100%);
+          border-radius: 8px;
+          opacity: 0;
+          transition: opacity 0.4s ease, transform 0.4s ease;
+          z-index: -1;
+          transform: scale(0);
+        }
+
+        .card:hover .price::before {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        .card:hover .price {
+          text-shadow: 0 0 25px rgba(227,154,158,0.6);
+          transform: translateY(-2px) scale(1.05);
         }
 
         .desc {
@@ -281,8 +314,8 @@ const ServicesPage = () => {
       {/* HERO */}
       <div className="hero">
         <div className="section-header">
-          <div className="section-tag">Our Services</div>
-          <h2 className="section-title">Excellence in Every Touch</h2>
+          {/* <div className="section-tag">Our Services</div> */}
+          <h2 className="section-title">Our Services</h2>
           <p className="section-sub">
             Discover a wide range of beauty and wellness services designed for you.
           </p>
@@ -318,15 +351,9 @@ const ServicesPage = () => {
               <div className="card-actions">
                 {/* Call Button */}
                 <a className="btn-call" href={`tel:+${PHONE}`}>
-                  <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
-                    <path
-                      d="M2.5 1.5C2.5 1.5 1 2 1 4C1 8.5 5.5 13 10 13C12 13 12.5 11.5 12.5 11.5L10.5 9C10.5 9 9.5 9.5 9 9C8 8 6 6 5 5C4.5 4.5 5 3.5 5 3.5L2.5 1.5Z"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                  </svg>
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
                   Call Us
                 </a>
 

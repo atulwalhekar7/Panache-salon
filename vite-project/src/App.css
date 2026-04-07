@@ -53,8 +53,8 @@ a, .nav-link:hover, .mobile-link:hover {
 
 
 /* Borders & accents */
-.navbar, section {
-  border-bottom: 3px solid var(--color-accent);
+.navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(227,154,158,0.1);
 }
 
 .filters button.active {
