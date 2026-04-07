@@ -17,7 +17,7 @@ const AboutPage = () => {
           color: #1a1a1a;
           font-family: 'Inter', sans-serif;
           line-height: 1.6;
-          padding-bottom: 100px;
+          // padding-bottom: 100px;
           width: 100%;
         }
 
@@ -69,10 +69,9 @@ const AboutPage = () => {
 
         /* --- Narrative Section --- */
         .section-padding {
-          padding: 120px 8%;
-          max-width: 1400px;
-          margin: 0 auto;
+          padding: 100px 20px;
         }
+
 
         .narrative-grid {
           display: grid;

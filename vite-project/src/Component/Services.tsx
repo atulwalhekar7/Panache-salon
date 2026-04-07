@@ -109,6 +109,7 @@ const ServicesPage = () => {
           text-transform: uppercase;
           margin-bottom: 1rem;
           display: inline-block;
+           padding-top: 20px;
         }
 
         .section-title {

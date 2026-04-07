@@ -15,7 +15,7 @@ export default function App() {
       <PanacheNavbar />
 
       {/* HOME - Banner Page */}
-      <section id="home" style={{ height: "100vh", scrollMarginTop: "100px" }}>
+      <section id="home" style={{ minHeight: "100vh", scrollMarginTop: "100px" }}>
         <Banner />
       </section>
 
