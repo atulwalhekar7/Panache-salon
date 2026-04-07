@@ -28,49 +28,201 @@ const Footer = () => {
           overflow: hidden;
         }
 
-        /* BEAUTY PARTICLE ANIMATION - Makeup/Salon theme */
+        /* ── BEAUTY PARTICLE CANVAS ── */
         .beauty-particles {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          top: 0; left: 0; right: 0; bottom: 0;
           pointer-events: none;
           overflow: hidden;
         }
-        .particle {
+
+        /* Base particle: floats up, fades in/out */
+        .p {
           position: absolute;
-          border-radius: 50%;
-          opacity: 0.12;
-          animation: beautyFloat 25s infinite linear;
-        }
-        .particle.brush1 {
-          width: 12px; height: 4px; 
-          background: linear-gradient(90deg, transparent, #E39A9E, #E8C9A3, transparent);
-          left: 15%; animation-delay: 0s;
-        }
-        .particle.brush2 {
-          width: 8px; height: 3px; 
-          background: linear-gradient(45deg, #F2D0D4, #E39A9E);
-          left: 35%; animation-delay: 8s; animation-duration: 18s;
-        }
-        .particle.shimmer1 {
-          width: 6px; height: 6px; 
-          background: radial-gradient(circle, #FFD1DC 0%, transparent 70%);
-          left: 70%; animation-delay: 4s;
-        }
-        .particle.shimmer2 {
-          width: 10px; height: 10px;
-          background: radial-gradient(circle, #E8C9A3 0%, #E39A9E 50%, transparent 70%);
-          left: 85%; animation-delay: 12s;
-        }
-        @keyframes beautyFloat {
-          0% { transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.8); opacity: 0; }
-          8% { opacity: 0.2; scale(1); }
-          85% { opacity: 0.2; }
-          100% { transform: translateY(-100px) translateX(100px) rotate(180deg) scale(1.2); opacity: 0; }
+          bottom: -60px;
+          opacity: 0;
+          animation: floatUp linear infinite;
         }
 
+        @keyframes floatUp {
+          0%   { transform: translateY(0)    rotate(0deg)  scale(0.8); opacity: 0; }
+          8%   { opacity: 1; }
+          88%  { opacity: 0.85; }
+          100% { transform: translateY(-110vh) rotate(30deg) scale(1.15); opacity: 0; }
+        }
+
+        /* ── Lipstick tube ── */
+        .lipstick {
+          width: 10px;
+          height: 38px;
+          position: relative;
+        }
+        .lipstick-bullet {
+          width: 10px; height: 14px;
+          background: linear-gradient(160deg, #F090A8, #D04060);
+          border-radius: 5px 5px 0 0;
+          position: absolute; top: 0;
+        }
+        .lipstick-collar {
+          width: 10px; height: 5px;
+          background: #8B3050;
+          position: absolute; top: 12px;
+        }
+        .lipstick-body {
+          width: 10px; height: 21px;
+          background: linear-gradient(180deg, #C06070, #8B3050);
+          border-radius: 0 0 3px 3px;
+          position: absolute; top: 17px;
+        }
+
+        /* ── Mascara wand ── */
+        .mascara {
+          width: 6px;
+          height: 50px;
+          position: relative;
+        }
+        .mascara-handle {
+          width: 6px; height: 34px;
+          background: linear-gradient(180deg, #3a3a3a, #1a1a1a);
+          border-radius: 3px;
+          position: absolute; bottom: 0;
+        }
+        .mascara-brush {
+          width: 14px; height: 18px;
+          background: #111;
+          border-radius: 7px;
+          position: absolute; top: 0; left: -4px;
+          box-shadow:
+            -5px 2px 0 1px #222,
+            -5px 5px 0 1px #222,
+            -5px 8px 0 1px #222,
+            -5px 11px 0 1px #222,
+             5px 2px 0 1px #222,
+             5px 5px 0 1px #222,
+             5px 8px 0 1px #222,
+             5px 11px 0 1px #222;
+        }
+
+        /* ── Nail polish bottle ── */
+        .nailpolish {
+          width: 14px;
+          height: 36px;
+          position: relative;
+        }
+        .nailpolish-cap {
+          width: 10px; height: 10px;
+          background: linear-gradient(180deg, #A04060, #7a2840);
+          border-radius: 3px 3px 0 0;
+          position: absolute; top: 0; left: 2px;
+        }
+        .nailpolish-neck {
+          width: 6px; height: 5px;
+          background: #8B3050;
+          position: absolute; top: 9px; left: 4px;
+        }
+        .nailpolish-bottle {
+          width: 14px; height: 22px;
+          background: linear-gradient(160deg, #F090A8 10%, #C04060 60%, #A03050);
+          border-radius: 4px 4px 5px 5px;
+          position: absolute; top: 14px;
+          overflow: hidden;
+        }
+        .nailpolish-shine {
+          width: 3px; height: 14px;
+          background: rgba(255,255,255,0.25);
+          border-radius: 2px;
+          position: absolute; top: 4px; left: 3px;
+        }
+
+        /* ── Sparkle ── */
+        .sparkle {
+          width: 16px; height: 16px;
+          position: relative;
+        }
+        .sparkle::before,
+        .sparkle::after {
+          content: '';
+          position: absolute;
+          background: #FFD6E0;
+          border-radius: 1px;
+        }
+        .sparkle::before {
+          width: 2px; height: 16px;
+          top: 0; left: 7px;
+        }
+        .sparkle::after {
+          width: 16px; height: 2px;
+          top: 7px; left: 0;
+        }
+        .sparkle-diag::before {
+          content: '';
+          position: absolute;
+          width: 2px; height: 11px;
+          background: rgba(255,214,224,0.6);
+          border-radius: 1px;
+          top: 2.5px; left: 7px;
+          transform: rotate(45deg);
+        }
+        .sparkle-diag::after {
+          content: '';
+          position: absolute;
+          width: 2px; height: 11px;
+          background: rgba(255,214,224,0.6);
+          border-radius: 1px;
+          top: 2.5px; left: 7px;
+          transform: rotate(-45deg);
+        }
+
+        /* ── Petal ── */
+        .petal {
+          width: 10px; height: 16px;
+          background: radial-gradient(ellipse at 40% 30%, #F9D0DA, #E39A9E);
+          border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+
+        /* ── Shimmer dot ── */
+        .shimmer {
+          width: 8px; height: 8px;
+          background: radial-gradient(circle, #FFD6E0 0%, #E39A9E 60%, transparent 100%);
+          border-radius: 50%;
+        }
+
+        /* ── Heart ── */
+        .heart {
+          width: 14px; height: 13px;
+          position: relative;
+          top: 3px;
+        }
+        .heart::before,
+        .heart::after {
+          content: '';
+          position: absolute;
+          width: 8px; height: 13px;
+          background: #E39A9E;
+          border-radius: 8px 8px 0 0;
+        }
+        .heart::before { transform: rotate(-45deg); left: 0; top: -3px; }
+        .heart::after  { transform: rotate(45deg);  left: 6px; top: -3px; }
+
+        /* ── Individual particle positions & timings ── */
+        .p1  { left: 5%;  animation-duration: 14s; animation-delay:  0s; }
+        .p2  { left: 12%; animation-duration: 18s; animation-delay:  4s; }
+        .p3  { left: 20%; animation-duration: 12s; animation-delay:  2s; }
+        .p4  { left: 28%; animation-duration: 20s; animation-delay:  7s; }
+        .p5  { left: 35%; animation-duration: 16s; animation-delay:  1s; }
+        .p6  { left: 42%; animation-duration: 22s; animation-delay: 10s; }
+        .p7  { left: 50%; animation-duration: 13s; animation-delay:  5s; }
+        .p8  { left: 57%; animation-duration: 17s; animation-delay:  3s; }
+        .p9  { left: 64%; animation-duration: 15s; animation-delay:  9s; }
+        .p10 { left: 71%; animation-duration: 19s; animation-delay:  6s; }
+        .p11 { left: 79%; animation-duration: 11s; animation-delay: 12s; }
+        .p12 { left: 86%; animation-duration: 21s; animation-delay:  8s; }
+        .p13 { left: 93%; animation-duration: 14s; animation-delay: 14s; }
+        .p14 { left: 8%;  animation-duration: 23s; animation-delay: 11s; }
+        .p15 { left: 46%; animation-duration: 15s; animation-delay: 16s; }
+        .p16 { left: 75%; animation-duration: 18s; animation-delay: 13s; }
+
+        /* ── Rest of footer styles ── */
         .footer-header {
           display: flex;
           align-items: flex-start;
@@ -78,7 +230,6 @@ const Footer = () => {
           margin-bottom: 32px;
           flex-wrap: wrap;
         }
-
         .brand-section {
           display: flex;
           flex-direction: column;
@@ -107,7 +258,6 @@ const Footer = () => {
           font-weight: 400;
           margin: 0;
         }
-
         .locations {
           display: flex;
           flex-direction: column;
@@ -140,15 +290,12 @@ const Footer = () => {
           font-size: 0.88rem;
           line-height: 1.5;
         }
-
         .nav-contact {
           display: flex;
           gap: 40px;
           align-items: flex-start;
         }
-        .col {
-          flex: 1;
-        }
+        .col { flex: 1; }
         .col h4 {
           font-size: 0.76rem;
           letter-spacing: 0.2em;
@@ -156,35 +303,25 @@ const Footer = () => {
           margin-bottom: 18px;
           color: #fff;
         }
-
         .links, .contact-list {
           list-style: none;
           padding: 0;
           margin: 0;
         }
-        .links li, .contact-item {
-          margin-bottom: 12px;
-        }
+        .links li, .contact-item { margin-bottom: 12px; }
         .links a, .contact-link {
           color: rgba(255,255,255,0.7);
           text-decoration: none;
           font-size: 0.9rem;
           transition: 0.3s;
         }
-        .links a:hover, .contact-link:hover {
-          color: #E39A9E;
-        }
-
+        .links a:hover, .contact-link:hover { color: #E39A9E; }
         .contact-item {
           display: flex;
           gap: 10px;
           align-items: center;
         }
-        .contact-icon {
-          width: 16px;
-          height: 16px;
-        }
-
+        .contact-icon { width: 16px; height: 16px; }
         .bottom {
           margin-top: 40px;
           padding-top: 18px;
@@ -195,70 +332,105 @@ const Footer = () => {
           font-size: 0.78rem;
           color: rgba(255,255,255,0.45);
         }
-        .socials {
-          display: flex;
-          gap: 18px;
-        }
+        .socials { display: flex; gap: 18px; }
         .socials a {
           color: rgba(255,255,255,0.55);
           transition: 0.3s;
         }
-        .socials a:hover {
-          color: #E39A9E;
-        }
+        .socials a:hover { color: #E39A9E; }
 
         @media (max-width: 1024px) {
-          .footer-header {
-            flex-direction: column;
-            gap: 24px;
-          }
-          .nav-contact {
-            flex-direction: column;
-            gap: 24px;
-          }
+          .footer-header { flex-direction: column; gap: 24px; }
+          .nav-contact { flex-direction: column; gap: 24px; }
         }
-
         @media (max-width: 768px) {
-          .footer {
-            padding: 50px 6% 25px;
-          }
-          .footer-header {
-            gap: 20px;
-          }
-          .brand-section {
-            align-items: center;
-          }
-          .location-box {
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            text-align: center;
-          }
-          .map-container {
-            width: 240px;
-            height: 160px;
-          }
-          .nav-contact {
-            gap: 20px;
-          }
-          .bottom {
-            flex-direction: column;
-            gap: 12px;
-            text-align: center;
-          }
+          .footer { padding: 50px 6% 25px; }
+          .footer-header { gap: 20px; }
+          .brand-section { align-items: center; }
+          .location-box { flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+          .map-container { width: 240px; height: 160px; }
+          .nav-contact { gap: 20px; }
+          .bottom { flex-direction: column; gap: 12px; text-align: center; }
         }
       `}</style>
 
+      {/* ── BEAUTY PARTICLE ANIMATION ── */}
       <div className="beauty-particles">
-        <div className="particle brush1"></div>
-        <div className="particle brush2"></div>
-        <div className="particle shimmer1"></div>
-        <div className="particle shimmer2"></div>
+
+        {/* Lipstick tubes */}
+        <div className="p p1">
+          <div className="lipstick">
+            <div className="lipstick-bullet"/>
+            <div className="lipstick-collar"/>
+            <div className="lipstick-body"/>
+          </div>
+        </div>
+        <div className="p p8">
+          <div className="lipstick" style={{transform:'scale(0.8)'}}>
+            <div className="lipstick-bullet" style={{background:'linear-gradient(160deg,#F5B0C0,#C03858)'}}/>
+            <div className="lipstick-collar"/>
+            <div className="lipstick-body"/>
+          </div>
+        </div>
+
+        {/* Mascara wands */}
+        <div className="p p3">
+          <div className="mascara">
+            <div className="mascara-brush"/>
+            <div className="mascara-handle"/>
+          </div>
+        </div>
+        <div className="p p11">
+          <div className="mascara" style={{transform:'scale(0.85)'}}>
+            <div className="mascara-brush"/>
+            <div className="mascara-handle"/>
+          </div>
+        </div>
+
+        {/* Nail polish bottles */}
+        <div className="p p5">
+          <div className="nailpolish">
+            <div className="nailpolish-cap"/>
+            <div className="nailpolish-neck"/>
+            <div className="nailpolish-bottle">
+              <div className="nailpolish-shine"/>
+            </div>
+          </div>
+        </div>
+        <div className="p p12">
+          <div className="nailpolish" style={{transform:'scale(0.9)'}}>
+            <div className="nailpolish-cap" style={{background:'linear-gradient(180deg,#805080,#5a2860)'}}/>
+            <div className="nailpolish-neck" style={{background:'#6a3070'}}/>
+            <div className="nailpolish-bottle" style={{background:'linear-gradient(160deg,#C890D8 10%,#904090 60%,#702060)'}}>
+              <div className="nailpolish-shine"/>
+            </div>
+          </div>
+        </div>
+
+        {/* Sparkles */}
+        <div className="p p2"><div className="sparkle"/></div>
+        <div className="p p6"><div className="sparkle" style={{filter:'hue-rotate(20deg)'}}/></div>
+        <div className="p p9"><div className="sparkle-diag sparkle"/></div>
+        <div className="p p14"><div className="sparkle" style={{width:'10px',height:'10px',transform:'scale(0.7)'}}/></div>
+
+        {/* Rose petals */}
+        <div className="p p4"><div className="petal"/></div>
+        <div className="p p10"><div className="petal" style={{background:'radial-gradient(ellipse at 40% 30%,#FADADD,#C07090)',transform:'rotate(35deg)'}}/></div>
+        <div className="p p15"><div className="petal" style={{transform:'rotate(-20deg)',opacity:'0.85'}}/></div>
+
+        {/* Shimmer dots */}
+        <div className="p p7"><div className="shimmer"/></div>
+        <div className="p p13"><div className="shimmer" style={{background:'radial-gradient(circle,#E8C9A3 0%,#C09060 60%,transparent 100%)'}}/></div>
+        <div className="p p16"><div className="shimmer" style={{width:'5px',height:'5px'}}/></div>
+
+        {/* Hearts */}
+        <div className="p p6" style={{animationDelay:'15s'}}><div className="heart"/></div>
+        <div className="p p11" style={{animationDelay:'18s'}}><div className="heart" style={{width:'10px',height:'9px',transform:'scale(0.75)'}}/></div>
       </div>
 
+      {/* ── FOOTER CONTENT ── */}
       <div className="footer-header">
-        
-        {/* BRAND STACK */}
+
         <div className="brand-section">
           <img src={logo} alt="The Panachè Logo" className="logo-click" onClick={scrollToHome} />
           <h2 className="logo-text">The Panachè</h2>
@@ -294,7 +466,6 @@ const Footer = () => {
               <li><a href="#course">Course</a></li>
             </ul>
           </div>
-
           <div className="col">
             <h4>Contact</h4>
             <ul className="contact-list">
@@ -306,7 +477,7 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <svg className="contact-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 .99V20c0 .55-.45 1-1 1-9.39 0-17 7.61-17 17s7.61 17 17 17 17-7.61 17-17S15.65 4 6.5 4c0-.55-.45-.99-1-.99V4c0-.55-.45-1-1-1s-.99.45-1-.99v-.01zm0 1.38c-2.87.93-5.01 3.05-5.7 5.7H6.6c.11-.36.2-.74.27-1.11-.91-1.65-1.98-3.14-3.26-4.59z"/>
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 .99V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17S2.61 3 3 3h3.5c.55 0 1 .45 1 1v3.5c0 .55-.45 1-1 1h-2c0 3.86 3.14 7 7 7v-2c0-.55.45-1 1-1H20c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1H6.62z"/>
                 </svg>
                 <a href="tel:+919890794670" className="contact-link">+91 98907 94670</a>
               </li>
@@ -329,4 +500,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
