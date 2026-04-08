@@ -38,7 +38,7 @@ export default function CourseSection() {
         /* HEADER */
         .section-header {
           text-align: center;
-          margin-bottom: 70px;
+          // margin-bottom: 70px;
         }
 
         .section-tag {
@@ -62,6 +62,7 @@ export default function CourseSection() {
           font-size: 1.05rem;
           line-height: 1.6;
           font-family: Cinzel, serif;
+              margin-bottom: 40px;
         }
 
         /* CONTAINER */

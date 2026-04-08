@@ -109,7 +109,7 @@ const AboutPage = () => {
 
         /* NARRATIVE SECTION */
         .section-padding {
-          padding: 80px 20px; /* reduced top padding */
+          // padding: 80px 20px; /* reduced top padding */
         }
 
         .narrative-grid {
@@ -246,30 +246,58 @@ const AboutPage = () => {
 
         .phi-item {
           opacity: 0;
-          transform: translateY(40px);
+          transform: translateY(40px) rotateX(-10deg);
           animation: phiItemRise 0.8s ease-out forwards;
+          background: rgba(255,255,255,0.08);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          padding: 2.5rem 2rem;
+          border: 1px solid rgba(255,255,255,0.1);
+          box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+          transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
         .phi-item:nth-child(1) { animation-delay: 0.5s; }
         .phi-item:nth-child(2) { animation-delay: 0.7s; }
         .phi-item:nth-child(3) { animation-delay: 0.9s; }
-        @keyframes phiItemRise {
-          to { opacity: 1; transform: translateY(0); }
+@keyframes phiItemRise {
+          to { opacity: 1; transform: translateY(0) rotateX(0deg); }
+        }
+
+        .phi-item:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 20px 60px rgba(227,154,158,0.4);
+          background: rgba(255,255,255,0.12);
+          border-color: rgba(227,154,158,0.3);
+        }
+
+        .phi-item:hover h4 {
+          color: #E8C9A3;
+          text-shadow: 0 4px 20px rgba(232,201,163,0.6);
+          transform: translateY(-2px);
         }
 
         .phi-item h4 {
-          font-size: 0.85rem;
+          font-size: 1.1rem;
           text-transform: uppercase;
-          letter-spacing: 0.25em;
-          margin-bottom: 1.4rem;
+          letter-spacing: 0.2em;
+          margin-bottom: 1.8rem;
           color: #E39A9E;
-          font-family: Cinzel, serif;
+          font-family: 'Cinzel', serif;
+          font-weight: 600;
+          text-shadow: 0 2px 10px rgba(227,154,158,0.5);
+          transition: all 0.3s ease;
         }
 
         .phi-item p {
-          font-size: 0.95rem;
-          color: #ccc;
-          line-height: 1.8;
-          font-family: Cinzel, serif;
+          font-size: 1rem;
+          color: #ddd;
+          line-height: 1.7;
+          font-family: 'Cinzel', serif;
+          flex-grow: 1;
         }
 
         /* GENERAL ANIMATIONS */
@@ -300,7 +328,10 @@ const AboutPage = () => {
           .section-padding { padding: 60px 5%; }
           .section-title { font-size: 2.2rem; }
           .about-hero { padding: 32px 6%; }
-          .phi-item h4 { font-size: 0.9rem; }
+          .phi-item h4 { font-size: 0.95rem; }
+          .phi-item:hover {
+            transform: translateY(-5px) scale(1.01);
+          }
         }
       `}</style>
 
