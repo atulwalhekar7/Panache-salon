@@ -24,83 +24,6 @@ const Footer = () => {
           overflow: hidden;
         }
 
-        /* ── 3D BEAUTY SCENE ── */
-        .scene-wrap {
-          position: absolute;
-          right: 0; top: 0; bottom: 0;
-          width: 200px;
-          pointer-events: none;
-          overflow: hidden;
-        }
-        .scene {
-          width: 100%; height: 100%;
-          perspective: 500px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .orbit-group {
-          width: 130px; height: 130px;
-          position: relative;
-          transform-style: preserve-3d;
-          animation: spinOrbit 20s linear infinite;
-        }
-        @keyframes spinOrbit {
-          0%   { transform: rotateX(18deg) rotateY(0deg); }
-          100% { transform: rotateX(18deg) rotateY(360deg); }
-        }
-        .obj3d {
-          position: absolute;
-          top: 50%; left: 50%;
-          transform-style: preserve-3d;
-        }
-
-        /* Lipstick */
-        .ls-body   { width:12px; height:36px; background:linear-gradient(180deg,#C06070,#8B3050); border-radius:2px; position:absolute; top:-18px; left:-6px; }
-        .ls-bullet { width:12px; height:16px; background:linear-gradient(160deg,#F090A8,#D04060); border-radius:6px 6px 0 0; position:absolute; top:-34px; left:-6px; }
-        .ls-collar { width:12px; height:4px; background:#6a1030; position:absolute; top:-18px; left:-6px; }
-        .ls-side   { width:4px; height:36px; background:#7a2040; position:absolute; top:-18px; left:6px; }
-
-        /* Mascara */
-        .msc-handle { width:7px; height:42px; background:linear-gradient(180deg,#444,#111); border-radius:3px; position:absolute; top:0; left:-3px; }
-        .msc-brush  { width:16px; height:20px; background:#222; border-radius:8px; position:absolute; top:-22px; left:-8px;
-          box-shadow: -6px 3px 0 1px #333, -6px 8px 0 1px #333, -6px 13px 0 1px #333,
-                       6px 3px 0 1px #333,  6px 8px 0 1px #333,  6px 13px 0 1px #333; }
-        .msc-side   { width:3px; height:42px; background:#2a2a2a; position:absolute; top:0; left:4px; }
-
-        /* Nail polish */
-        .np-bottle { width:16px; height:26px; background:linear-gradient(160deg,#F090A8 10%,#C04060 60%,#A03050); border-radius:4px 4px 6px 6px; position:absolute; top:-20px; left:-8px; overflow:hidden; }
-        .np-shine  { width:3px; height:16px; background:rgba(255,255,255,0.28); border-radius:2px; position:absolute; top:4px; left:3px; }
-        .np-neck   { width:7px; height:6px; background:#8B3050; position:absolute; top:-26px; left:-3px; }
-        .np-cap    { width:12px; height:12px; background:linear-gradient(180deg,#A04060,#7a2840); border-radius:3px 3px 0 0; position:absolute; top:-38px; left:-6px; }
-        .np-side   { width:5px; height:26px; background:#A03050; border-radius:0 4px 6px 0; position:absolute; top:-20px; left:8px; }
-
-        /* Bob animations */
-        .bob1 { animation: bob1 4s ease-in-out infinite; }
-        .bob2 { animation: bob2 5.5s ease-in-out infinite; }
-        .bob3 { animation: bob3 6s ease-in-out infinite; }
-        @keyframes bob1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
-        @keyframes bob2 { 0%,100%{transform:translateY(0) rotate(-6deg)} 50%{transform:translateY(-11px) rotate(6deg)} }
-        @keyframes bob3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
-
-        /* Scene sparkles */
-        .sc-spark {
-          position: absolute;
-          opacity: 0;
-          animation: scSparkAnim linear infinite;
-        }
-        .sc-spark::before, .sc-spark::after {
-          content: ''; position: absolute; background: #FFD6E0; border-radius: 1px;
-        }
-        .sc-spark::before { width:1.5px; height:11px; top:0; left:5px; }
-        .sc-spark::after  { width:11px; height:1.5px; top:5px; left:0; }
-        @keyframes scSparkAnim {
-          0%  { transform:translateY(40px) scale(0.4); opacity:0; }
-          15% { opacity:1; }
-          85% { opacity:0.7; }
-          100%{ transform:translateY(-50px) scale(1.3); opacity:0; }
-        }
-
         /* ── RISING PARTICLES ── */
         .bp {
           position: absolute;
@@ -128,7 +51,6 @@ const Footer = () => {
           align-items: flex-start;
           position: relative;
           z-index: 1;
-          padding-right: 180px;
         }
 
         .brand-col    { flex: 1.2; }
@@ -136,31 +58,31 @@ const Footer = () => {
         .contact-col  { flex: 1;   display: flex; flex-direction: column; align-items: flex-end;  }
 
         .addr-item {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 16px;
-}
+          display: flex;
+          gap: 12px;
+          align-items: flex-start;
+          margin-bottom: 16px;
+        }
 
-.map-box {
-  width: 90px;
-  height: 70px;
-  border: none;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
+        .map-box {
+          width: 90px;
+          height: 70px;
+          border: none;
+          border-radius: 8px;
+          flex-shrink: 0;
+        }
 
         /* Brand */
         .brand-col { display:flex; flex-direction:column; gap:8px; }
         .logo-img  { height:72px; width:auto; cursor:pointer; }
         .logo-text { font-family:'Playfair Display',serif; font-size:2.4rem; margin:0; color:#E39A9E; font-weight:500; line-height:1; }
-        .tagline   { font-size:0.82rem; color:rgba(255,255,255,0.55); letter-spacing:0.15em; text-transform:uppercase; margin:0; }
+        .tagline   { font-size:0.82rem; color:rgba(255,255,255,0.55); letter-spacing:0.15em; text-transform:uppercase; margin:0;font-family: Cinzel, serif; }
         .addr-block{ margin-top:18px; }
-        .addr-block p { margin:0 0 12px; font-size:0.84rem; color:rgba(255,255,255,0.78); line-height:1.6; }
+        .addr-block p { margin:0 0 12px; font-size:0.84rem; color:rgba(255,255,255,0.78); line-height:1.6; font-family: Cinzel, serif;}
         .addr-branch { display:block; font-size:0.72rem; color:rgba(255,255,255,0.38); letter-spacing:0.08em; text-transform:uppercase; margin-top:3px; }
 
         /* Nav (center) */
-        .nav-col { display:flex; flex-direction:column; align-items:center; margin-top: 100px;}
+        .nav-col { display:flex; flex-direction:column; align-items:center; margin-top: 100px;font-family: Cinzel, serif;}
         .nav-col h4, .contact-col h4 {
           font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase;
           color:#fff; margin:0 0 18px;
@@ -174,7 +96,7 @@ const Footer = () => {
         .nav-col ul li a:hover { color:#E39A9E; }
 
         /* Contact (right) */
-        .contact-col { display:flex; flex-direction:column; align-items:flex-end; margin-top: 100px }
+        .contact-col { display:flex; flex-direction:column; align-items:flex-end; margin-top: 100px ;font-family: Cinzel, serif;}
         .c-item { display:flex; gap:10px; align-items:center; margin-bottom:13px; }
         .c-item a {
           color:rgba(255,255,255,0.65); text-decoration:none;
@@ -196,8 +118,7 @@ const Footer = () => {
         .socials a:hover { color:#E39A9E; }
 
         @media (max-width: 1024px) {
-          .footer-grid { grid-template-columns:1fr 1fr; padding-right:0; }
-          .scene-wrap  { display:none; }
+          .footer-grid { grid-template-columns:1fr 1fr; }
         }
         @media (max-width: 640px) {
           .footer-grid { grid-template-columns:1fr; }
@@ -207,63 +128,22 @@ const Footer = () => {
         }
       `}</style>
 
-      {/* ── 3D BEAUTY SCENE ── */}
-      <div className="scene-wrap">
-        <div className="scene">
-          <div className="orbit-group">
-
-            {/* Lipstick 1 – rose */}
-            <div className="obj3d bob1" style={{transform:'translate3d(-42px,-24px,0)'}}>
-              <div className="ls-bullet"/>
-              <div className="ls-collar"/>
-              <div className="ls-body"/>
-              <div className="ls-side"/>
-            </div>
-
-            {/* Mascara wand */}
-            <div className="obj3d bob2" style={{transform:'translate3d(30px,18px,28px)'}}>
-              <div className="msc-brush"/>
-              <div className="msc-handle"/>
-              <div className="msc-side"/>
-            </div>
-
-            {/* Nail polish */}
-            <div className="obj3d bob3" style={{transform:'translate3d(-8px,34px,-22px)'}}>
-              <div className="np-cap"/>
-              <div className="np-neck"/>
-              <div className="np-bottle"><div className="np-shine"/></div>
-              <div className="np-side"/>
-            </div>
-
-            {/* Lipstick 2 – purple */}
-            <div className="obj3d bob1" style={{transform:'translate3d(44px,-32px,12px) scale(0.72)'}}>
-              <div className="ls-bullet" style={{background:'linear-gradient(160deg,#C890D8,#804090)'}}/>
-              <div className="ls-collar" style={{background:'#5a2060'}}/>
-              <div className="ls-body"   style={{background:'linear-gradient(180deg,#A070B0,#6a3080)'}}/>
-              <div className="ls-side"   style={{background:'#5a2070'}}/>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Sparkles inside scene */}
-        <div className="sc-spark" style={{left:'22%',top:'35%',animationDuration:'3.4s',animationDelay:'0s'}}/>
-        <div className="sc-spark" style={{left:'58%',top:'55%',animationDuration:'4.1s',animationDelay:'1.3s'}}/>
-        <div className="sc-spark" style={{left:'77%',top:'22%',animationDuration:'3s',animationDelay:'2.6s'}}/>
-        <div className="sc-spark" style={{left:'40%',top:'72%',animationDuration:'5s',animationDelay:'0.8s'}}/>
-      </div>
-
       {/* ── RISING BEAUTY PARTICLES ── */}
       <div className="bp" style={{left:'3%',  animationDuration:'14s',animationDelay:'0s' }}><div className="petal"/></div>
-      <div className="bp" style={{left:'9%',  animationDuration:'11s',animationDelay:'3s' }}><div className="shimmer"/></div>
-      <div className="bp" style={{left:'16%', animationDuration:'16s',animationDelay:'1s' }}><div className="heart-p"/></div>
-      <div className="bp" style={{left:'23%', animationDuration:'13s',animationDelay:'6s' }}><div className="petal" style={{transform:'rotate(30deg)',background:'radial-gradient(ellipse at 40% 30%,#FADADD,#C07090)'}}/></div>
-      <div className="bp" style={{left:'30%', animationDuration:'10s',animationDelay:'2s' }}><div className="shimmer" style={{background:'radial-gradient(circle,#E8C9A3 0%,#C09060 60%,transparent 100%)'}}/></div>
-      <div className="bp" style={{left:'37%', animationDuration:'17s',animationDelay:'8s' }}><div className="heart-p" style={{transform:'scale(0.75)'}}/></div>
-      <div className="bp" style={{left:'44%', animationDuration:'12s',animationDelay:'4s' }}><div className="petal"/></div>
-      <div className="bp" style={{left:'51%', animationDuration:'15s',animationDelay:'9s' }}><div className="shimmer"/></div>
-      <div className="bp" style={{left:'58%', animationDuration:'11s',animationDelay:'5s' }}><div className="petal" style={{transform:'rotate(-20deg)'}}/></div>
-      <div className="bp" style={{left:'65%', animationDuration:'13s',animationDelay:'7s' }}><div className="heart-p"/></div>
+      <div className="bp" style={{left:'8%',  animationDuration:'11s',animationDelay:'3s' }}><div className="shimmer"/></div>
+      <div className="bp" style={{left:'14%', animationDuration:'16s',animationDelay:'1s' }}><div className="heart-p"/></div>
+      <div className="bp" style={{left:'20%', animationDuration:'13s',animationDelay:'6s' }}><div className="petal" style={{transform:'rotate(30deg)',background:'radial-gradient(ellipse at 40% 30%,#FADADD,#C07090)'}}/></div>
+      <div className="bp" style={{left:'27%', animationDuration:'10s',animationDelay:'2s' }}><div className="shimmer" style={{background:'radial-gradient(circle,#E8C9A3 0%,#C09060 60%,transparent 100%)'}}/></div>
+      <div className="bp" style={{left:'33%', animationDuration:'17s',animationDelay:'8s' }}><div className="heart-p" style={{transform:'scale(0.75)'}}/></div>
+      <div className="bp" style={{left:'40%', animationDuration:'12s',animationDelay:'4s' }}><div className="petal"/></div>
+      <div className="bp" style={{left:'47%', animationDuration:'15s',animationDelay:'9s' }}><div className="shimmer"/></div>
+      <div className="bp" style={{left:'54%', animationDuration:'11s',animationDelay:'5s' }}><div className="heart-p"/></div>
+      <div className="bp" style={{left:'60%', animationDuration:'13s',animationDelay:'7s' }}><div className="petal" style={{transform:'rotate(-20deg)'}}/></div>
+      <div className="bp" style={{left:'67%', animationDuration:'14s',animationDelay:'2s' }}><div className="shimmer"/></div>
+      <div className="bp" style={{left:'73%', animationDuration:'16s',animationDelay:'5s' }}><div className="heart-p"/></div>
+      <div className="bp" style={{left:'80%', animationDuration:'12s',animationDelay:'1s' }}><div className="petal" style={{transform:'rotate(15deg)',background:'radial-gradient(ellipse at 40% 30%,#FADADD,#C07090)'}}/></div>
+      <div className="bp" style={{left:'87%', animationDuration:'10s',animationDelay:'6s' }}><div className="shimmer" style={{background:'radial-gradient(circle,#E8C9A3 0%,#C09060 60%,transparent 100%)'}}/></div>
+      <div className="bp" style={{left:'94%', animationDuration:'15s',animationDelay:'3s' }}><div className="heart-p" style={{transform:'scale(0.75)'}}/></div>
 
       {/* ── MAIN CONTENT GRID ── */}
       <div className="footer-grid">
@@ -275,35 +155,35 @@ const Footer = () => {
           <p className="tagline">Luxury Salon + Academy</p>
           <div className="addr-block">
 
-  {/* Branch 1 */}
-  <div className="addr-item">
-    <iframe
-      src="https://www.google.com/maps?q=Sonigara+Kesar+Wakad+Pune&output=embed"
-      className="map-box"
-      loading="lazy"
-    ></iframe>
-    <p>
-      Shop no 7, Sonigara Kesar<br/>
-      Kaspate Vasti, Wakad, Pune 411057
-      <span className="addr-branch">Branch 1 — Wakad</span>
-    </p>
-  </div>
+            {/* Branch 1 */}
+            <div className="addr-item">
+              <iframe
+                src="https://www.google.com/maps?q=Sonigara+Kesar+Wakad+Pune&output=embed"
+                className="map-box"
+                loading="lazy"
+              ></iframe>
+              <p>
+                Shop no 7, Sonigara Kesar<br/>
+                Kaspate Vasti, Wakad, Pune 411057
+                <span className="addr-branch">Branch 1 — Wakad</span>
+              </p>
+            </div>
 
-  {/* Branch 2 */}
-  <div className="addr-item">
-    <iframe
-      src="https://www.google.com/maps?q=Tapkir+Mala+Road+Rahatani+Pune&output=embed"
-      className="map-box"
-      loading="lazy"
-    ></iframe>
-    <p>
-      Shop No. 6, Tapkir Mala Road<br/>
-      Near Nayara Petrol Pump, Rahatani, Pune 411017
-      <span className="addr-branch">Branch 2 — Rahatani</span>
-    </p>
-  </div>
+            {/* Branch 2 */}
+            <div className="addr-item">
+              <iframe
+                src="https://www.google.com/maps?q=Tapkir+Mala+Road+Rahatani+Pune&output=embed"
+                className="map-box"
+                loading="lazy"
+              ></iframe>
+              <p>
+                Shop No. 6, Tapkir Mala Road<br/>
+                Near Nayara Petrol Pump, Rahatani, Pune 411017
+                <span className="addr-branch">Branch 2 — Rahatani</span>
+              </p>
+            </div>
 
-</div>
+          </div>
         </div>
 
         {/* Column 2: Navigation (centered) */}

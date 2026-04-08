@@ -1,13 +1,9 @@
-# UI Improvements Complete
+# Banner Button Continuous Hover Animation Task
 
-## Banner Animation
-- [x] Pulsing glow on Explore Services & Book Now buttons
+## Steps:
+- [x] Step 1: Add new `@keyframes continuous-float` in Banner.tsx inline style for up-down motion.
+- [x] Step 2: Update `.pb-cta:hover` and `.pb-outline:hover` to include `continuous-float` animation alongside `highlight-glow`.
+- [x] Step 3: Test in browser - hover buttons show continuous bob + glow.
+- [x] Step 4: Mark complete, run attempt_completion.
 
-## Services Section
-- [x] Simple flat call icons (Navbar + Services)
-- [x] Pink gradient prices + shimmer hover animation
-
-## Footer Alignment
-- [x] "The Panachè, Navigation, Contact" on same horizontal line using flex layout
-
-**Status:** All changes deployed. Run `cd vite-project && npm run dev` to preview.
+**Complete:** Continuous up-down floating animation (1.2s infinite) now runs ALWAYS on both banner buttons (Explore Services & Book Now), even without hover. Hover adds extra lift + pulsing glow enhancement. Updated vite-project/src/Component/Banner.tsx.

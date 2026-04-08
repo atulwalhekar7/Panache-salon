@@ -104,6 +104,7 @@ const AboutPage = () => {
           max-width: 600px;
           margin-left: auto;
           margin-right: auto;
+          font-family: 'Cinzel', serif;
         }
 
         /* NARRATIVE SECTION */
@@ -261,12 +262,14 @@ const AboutPage = () => {
           letter-spacing: 0.25em;
           margin-bottom: 1.4rem;
           color: #E39A9E;
+          font-family: Cinzel, serif;
         }
 
         .phi-item p {
           font-size: 0.95rem;
           color: #ccc;
           line-height: 1.8;
+          font-family: Cinzel, serif;
         }
 
         /* GENERAL ANIMATIONS */
@@ -329,27 +332,27 @@ const AboutPage = () => {
         </div>
         <div className="text-content">
           <h2>Our Philosophy of Personal Expression</h2>
-          <p>
+          <p style={{ fontFamily: 'Cinzel, serif' }}>
             Founded on the belief that beauty is an intimate expression of self,
             <strong>The Panachè</strong> has spent over a decade redefining
             luxury hair and skin care in Pune. Our journey is rooted in passion,
             precision, and a commitment to enhancing every client's natural elegance.
           </p>
 
-          <p>
+          <p style={{ fontFamily: 'Cinzel, serif' }}>
             We don't just offer services; we curate experiences. From personalized
             consultations to the use of premium products and advanced techniques,
             every detail is thoughtfully designed to deliver exceptional results.
             Our space reflects comfort, sophistication, and a sense of indulgence.
           </p>
 
-          <p>
+          <p style={{ fontFamily: 'Cinzel, serif' }}>
             Beyond our salon, our academy stands as a pillar of excellence. We train
             the next generation of beauty professionals, blending creativity with
             technical expertise to uphold the highest industry standards.
           </p>
 
-          <p>
+          <p style={{ fontFamily: 'Cinzel, serif' }}>
             At <strong>The Panachè</strong>, we believe confidence begins with how you
             feel. Whether it's a subtle transformation or a bold new look, our team
             is dedicated to helping you express your individuality with style and grace.

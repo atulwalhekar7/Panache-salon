@@ -248,6 +248,7 @@ export default function PanacheNavbar() {
           border-radius: 10px;
           cursor: pointer;
           font-size: 0.88rem;
+          font-family: 'Cinzel', serif;
           font-weight: 600;
           text-transform: uppercase;
           text-decoration: none;
@@ -279,6 +280,7 @@ export default function PanacheNavbar() {
           border-radius: 10px;
           cursor: pointer;
           font-size: 0.88rem;
+          font-family: 'Cinzel', serif;
           font-weight: 600;
           text-transform: uppercase;
           transition: background 0.2s, color 0.2s;

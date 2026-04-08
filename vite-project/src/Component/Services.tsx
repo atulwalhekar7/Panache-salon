@@ -116,6 +116,7 @@ const ServicesPage = () => {
           font-size: 2.8rem;
           font-weight: 700;
           margin-bottom: 1rem;
+          margin-top: 60px;
         }
 
         .section-sub {
@@ -147,6 +148,7 @@ const ServicesPage = () => {
           border: 1px solid #ccc;
           background: white;
           cursor: pointer;
+          font-family: Cinzel, serif;
         }
 
         .filters button.active {
@@ -204,6 +206,7 @@ const ServicesPage = () => {
           font-size: 1.4rem;
           font-weight: bold;
           margin-bottom: 6px;
+          font-family: 'Playfair Display', serif;
         }
 
         .price {
@@ -221,6 +224,7 @@ const ServicesPage = () => {
           display: inline-block;
           transition: all 0.3s ease;
           position: relative;
+          font-family: Cinzel, serif;
         }
 
         .price::before {
@@ -251,6 +255,8 @@ const ServicesPage = () => {
           line-height: 1.6;
           margin-bottom: 15px;
           flex: 1;
+          font-family: Cinzel, serif;
+          
         }
 
         .card-actions {
@@ -275,6 +281,7 @@ const ServicesPage = () => {
           font-weight: 600;
           text-decoration: none;
           transition: background 0.2s, color 0.2s;
+          font-family: Cinzel, serif;
         }
 
         .btn-call:hover {
@@ -298,6 +305,7 @@ const ServicesPage = () => {
           font-weight: 600;
           text-decoration: none;
           transition: background 0.2s;
+          font-family: Cinzel, serif;
         }
 
         .btn-whatsapp:hover { background: #E39A9E; }

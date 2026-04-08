@@ -24,7 +24,7 @@ export default function CourseSection() {
         .course-section {
           // padding: 100px 8%;
           background: linear-gradient(135deg, #FAF9F6, #E8C9A3);
-          font-family: 'Inter', sans-serif;
+          font-family: Cinzel, serif;
           opacity: 0;
           transform: translateY(60px);
           transition: all 1s ease;
@@ -61,6 +61,7 @@ export default function CourseSection() {
           color: #666;
           font-size: 1.05rem;
           line-height: 1.6;
+          font-family: Cinzel, serif;
         }
 
         /* CONTAINER */
@@ -166,6 +167,7 @@ export default function CourseSection() {
           text-transform: uppercase;
           transition: all 0.3s ease;
           border-radius: 4px;
+          font-family: Cinzel, serif;
         }
 
         .cta-btn:hover {

@@ -311,13 +311,14 @@ export default function PanacheBanner() {
           justify-content: center;
           transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
           box-shadow: none;
+          animation: continuous-float 1.2s ease-in-out infinite, highlight-glow 1.5s ease-in-out infinite;
         }
 .pb-cta:hover {
           background: #E8C9A3;
           color: #000000 !important;
           transform: translateY(-2px);
           box-shadow: 0 8px 28px rgba(227,154,158,0.4);
-          animation: highlight-glow 1.5s ease-in-out infinite;
+          animation: highlight-glow 1.5s ease-in-out infinite, continuous-float 1.2s ease-in-out infinite;
         }
 
         .pb-outline {
@@ -338,19 +339,30 @@ export default function PanacheBanner() {
           justify-content: center;
           gap: 9px;
           transition: border-color 0.3s, background 0.3s, transform 0.25s;
+          animation: continuous-float 1.2s ease-in-out infinite, highlight-glow 1.5s ease-in-out infinite;
         }
 .pb-outline:hover {
           border-color: #E39A9E;
           background: rgba(227,154,158,0.12);
           color: #ffffff !important;
           transform: translateY(-2px);
-          animation: highlight-glow 1.5s ease-in-out infinite;
+          animation: highlight-glow 1.5s ease-in-out infinite, continuous-float 1.2s ease-in-out infinite;
+        }
+
+/* Continuous float up-down animation for hover */
+        @keyframes continuous-float {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            transform: translateY(-4px) scale(1.02);
+          }
         }
 
         /* Focus states for accessibility */
         .pb-cta:focus, .pb-outline:focus {
           outline: none;
-          animation: highlight-glow 1.5s ease-in-out infinite;
+          animation: highlight-glow 1.5s ease-in-out infinite, continuous-float 1.2s ease-in-out infinite;
         }
 
         @keyframes pb-up {
